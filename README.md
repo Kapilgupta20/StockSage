@@ -15,6 +15,38 @@ StockSage is built with these core frameworks and modules:
 
 ---
 
+## **Getting Started**
+
+### Prerequisites:
+- Python 3.8 or higher.
+- Required Python libraries (listed in `requirements.txt`).
+
+### Installation:
+1. Clone this repository
+
+   ```bash
+   git clone https://github.com/Kapilgupta20/StockSage.git
+
+2. Change directory
+
+    ```bash
+   cd StockSage
+   cd webapp
+
+3. Install dependencies
+
+    ```bash
+    pip install -r requirements.txt
+
+4. Run the app
+
+    ```bash
+    streamlit run Home.py
+
+The app will be live at `http://localhost:8501`
+
+---
+
 ## **Key Features**
 
 - **Real-time data** - Fetch latest prices and fundamentals using yfinance API.
@@ -42,23 +74,3 @@ We welcome contributions and suggestions for these or other features!
 
 ---
 
-## **Getting Started**
-
-### Prerequisites:
-- Python 3.8 or higher.
-- Required Python libraries (listed in `requirements.txt`).
-
-### Installation:
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Kapilgupta20/StockSage.git
-   cd StockSage
-   cd webapp
-
-2. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-
-3. Run the app:
-    ```bash
-    streamlit run Home.py
