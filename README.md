@@ -51,11 +51,14 @@ We welcome contributions and suggestions for these or other features!
 ### Installation:
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/StockSage.git
+   git clone https://github.com/Kapilgupta20/StockSage.git
    cd StockSage
+   cd webapp
 
 2. Install dependencies:
+    ```bash
     pip install -r requirements.txt
 
 3. Run the app:
+    ```bash
     streamlit run Home.py
