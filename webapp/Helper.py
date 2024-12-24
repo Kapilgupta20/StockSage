@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import datetime as dt
 from math import floor,ceil,sqrt
+from pathlib import Path
 import yfinance as yf
 import warnings
 warnings.filterwarnings('ignore')
@@ -13,7 +14,7 @@ def fetch_stock_history(stock_ticker, period, interval):
     return stock_data_history
 
 def fetch_stocks():
-    df = pd.read_csv('equity_issuers.csv', encoding='utf-8')
+    df = pd.read_csv(Path.cwd() / ".." / "data" / "equity_issuers.csv", encoding='utf-8')
     df = df[["Security Code", "Issuer Name"]]
     stock_dict = dict(zip(df["Security Code"], df["Issuer Name"]))
     return stock_dict

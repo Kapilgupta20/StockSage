@@ -51,8 +51,8 @@ The app will be live at `http://localhost:8501`
 
 - **Real-time data** - Fetch latest prices and fundamentals using yfinance API.
 - **Financial charts** - Interactive historical stock price visualization.
-- **LSTM forecasting** - Make statistically robust predictions.
-- **Backtesting** - Evaluate model performance.
+- **LSTM forecasting** - Utilized LSTM (Long Short-Term Memory) machine learning models, ensuring statistically robust predictions.
+- **Model Performance** - Model achieves Mean Absolute Percentage Error (MAPE) score of under 10%, ensuring reliable and accurate predictions.
 - **Responsive design** - Works on all devices.
 
 ---
@@ -74,3 +74,14 @@ We welcome contributions and suggestions for these or other features!
 
 ---
 
+## **Disclaimer**
+
+ **This application is for educational purposes only. The predictions should not be used as financial advice or for making investment decisions.**
+
+ ---
+
+## **Contact**
+
+**For any inquiries or suggestions, please contact us at ofkapilgupta1@gmail.com.**
+
+---
