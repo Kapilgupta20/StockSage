@@ -6,22 +6,23 @@ st.set_page_config(page_title="Home")
 
 st.sidebar.markdown("## **User Input Features**")
 stock_dict = fetch_stocks()
-stock = st.sidebar.selectbox("### **Select stock**", list(stock_dict.keys()))
-stock_exchange = st.sidebar.radio("### **Choose a stock exchange**", ("BSE", "NSE"), index=0)
-stock_ticker = f"{stock_dict[stock]}.{'BO' if stock_exchange == 'BSE' else 'NS'}"
+# stock = st.sidebar.selectbox("### **Select stock**", list(stock_dict.keys()), format_func=lambda x: stock_dict[x])
+stock = st.sidebar.selectbox("### **Select stock**", list(stock_dict.keys()), format_func=lambda x: stock_dict[x])
+stock_ticker = stock
+stock = f"{stock_dict[stock]}"
 st.sidebar.text_input(label="### **Stock ticker code**", placeholder=stock_ticker, disabled=True)
 
 
 try:
     stock_data_info = fetch_stock_info(stock_ticker)
-except:
-    st.error("Error: Unable to fetch the stock data. Please try again later.")
+except Exception as e:
+    st.error(f"Error: {e}")
     st.stop()
 
 try:
     prediction = predict(stock_ticker)
-except:
-    st.error("Error: Unable to predict the stock price. Please try again later.")
+except Exception as e:
+    st.error(f"Error: {e}")
     st.stop()
 
 st.markdown("# **StockSage**")
@@ -39,7 +40,7 @@ col1.dataframe(
     width=500,
 )
 col2.dataframe(
-    pd.DataFrame({"Predicted Close": [prediction[0][0]]}),
+    pd.DataFrame({"Predicted Close": [prediction]}),
     hide_index=True,
     width=500,
 )
@@ -77,7 +78,7 @@ if col9.button("10Y"):
     interval = "1mo"
 if col10.button("Max"):
     period = "max"
-    interval = "2mo"
+    interval = "3mo"
 stock_data = fetch_stock_history(stock_ticker, period, interval)
 st.line_chart(stock_data['Close'])
 st.markdown("  \n")
