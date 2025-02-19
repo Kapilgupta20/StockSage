@@ -60,8 +60,8 @@ def fetch_stock_info(stock_ticker):
 def predict(stock_ticker):
     from keras.models import load_model # type: ignore
     stockticker = stock_ticker.split(".")[0]
-    model = load_model(Path.cwd()/".."/"model"/f"model_{stockticker}.h5")
-    scaler = np.load(Path.cwd()/".."/"model"/f"scaler_{stockticker}.npy", allow_pickle=True).item()
+    model = load_model(Path.cwd()/"model"/f"model_{stockticker}.h5")
+    scaler = np.load(Path.cwd()/"model"/f"scaler_{stockticker}.npy", allow_pickle=True).item()
     df = yf.download(stock_ticker, period="3mo", progress=False)
     df["Date"] = df.index
     df = df[["Date", "Close"]]
