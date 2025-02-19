@@ -6,7 +6,6 @@ st.set_page_config(page_title="Home")
 
 st.sidebar.markdown("## **User Input Features**")
 stock_dict = fetch_stocks()
-# stock = st.sidebar.selectbox("### **Select stock**", list(stock_dict.keys()), format_func=lambda x: stock_dict[x])
 stock = st.sidebar.selectbox("### **Select stock**", list(stock_dict.keys()), format_func=lambda x: stock_dict[x])
 stock_ticker = stock
 stock = f"{stock_dict[stock]}"
